@@ -1,0 +1,64 @@
+\pagestyle{empty} % no headers in this section
+\input{./0_Front_matter/1_title_page} % Title page inside of the book
+\begin{onehalfspacing} 
+\frontmatter
+% First blank page
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+% Second blank page
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+% Third blank page
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+\pagestyle{plain} % Set the page style to 'plain' for subsequent pages
+\input{./0_Front_matter/2_Thesis summary}
+\newpage
+\thispagestyle{plain} %% add page number to blank pages
+\mbox{}
+
+\input{./0_Front_matter/3_Declaration}
+\newpage
+\thispagestyle{plain} %% add page number to blank pages
+\mbox{}
+\newpage
+% Produce table of contents
+\tableofcontents
+
+\input{./0_Front_matter/4_ack}
+\newpage
+\thispagestyle{plain}
+\mbox{}
+
+\input{./0_Front_matter/5_Contributors}
+\newpage
+\thispagestyle{plain}
+\mbox{}
+
+\input{./0_Front_matter/6_Publications arising from this thesis}
+\newpage
+\thispagestyle{plain}
+\mbox{}
+\newpage
+
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+\newpage
+\thispagestyle{plain}
+\mbox{}
+\newpage
+
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+\newpage
+\thispagestyle{plain}
+\mbox{}
+\newpage
+
+\end{onehalfspacing}

@@ -1,0 +1,167 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This is a template for the Cardiff University, Doctoral Thesis 
+% Viviana Greco   
+% October 2023
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Font size should be no less than 12 point
+\documentclass[12pt,oneside]{book}
+
+% Margins
+\usepackage{vmargin}
+\setmarginsrb           { 1.5in}  % left margin
+                        { 0.6in}  % top margin
+                        { 1.0in}  % right margin
+                        { 0.8in}  % bottom margin
+                        {  20pt}  % head height
+                        {0.25in}  % head sep
+                        {   9pt}  % foot height
+                        { 0.3in}  % foot sep
+
+% Line Spacing
+\usepackage{setspace}
+\doublespacing % For double line spacing
+
+% Paragraph Settings
+\usepackage{parskip} % Import parskip package for paragraph formatting
+\setlength{\parskip}{\baselineskip} % Set the space between paragraphs to be equal to one line height
+\setlength{\parindent}{0pt} % Set paragraph indentation to zero
+
+% Captions and Footnotes Font Size
+\usepackage[font={normalsize}]{caption} % Import caption package to customize caption fonts
+\captionsetup{
+    format=plain,           % Set caption format to plain (default: hanging)
+    singlelinecheck=false,  % Force alignment to justify, even for single line captions
+    font={normalsize}       % Set caption font size to normal size (12pt by default)
+}
+
+% Page Header and Footer Settings
+\usepackage{fancyhdr}      % Import fancyhdr package to customize headers and footers
+\fancyhf{}                 % Clear all header and footer fields
+\fancyhead[R]{\leftmark}   % Set right header to display the current chapter/section name
+\fancyfoot[C]{\thepage}    % Set center footer to display the current page number
+\renewcommand{\headrulewidth}{0.4pt} % Set the header rule width to 0.4pt
+
+% Adjustbox Package
+\usepackage{adjustbox} % Import adjustbox for flexible resizing and alignment of boxes
+
+% Bigints Package for Large Integral Signs
+\usepackage{bigints} % Import bigints for displaying large integral signs
+
+% Placeins Package for Float Barriers
+\usepackage{placeins} % Import placeins for controlling float placement
+% \FloatBarrier command can be used to ensure all floats (figures/tables) are processed before continuing
+
+\usepackage{tocloft} % Import tocloft for customizing the Table of Contents, List of Figures, etc.
+% Define how figures are listed in the List of Figures (LoF)
+\renewcommand{\cftfigpresnum}{\figurename~} % Prefix figure name (e.g., "Figure") before the number in LoF
+\renewcommand{\cftfigaftersnum}{:} % Add colon after the figure number in LoF
+\newlength{\mylen} % Create a new length variable
+\settowidth{\mylen}{\cftfigpresnum\cftfigaftersnum} % Measure the width of the prefix and colon
+\addtolength{\cftfignumwidth}{\mylen} % Adjust the width for figure number in LoF to accommodate prefix and colon
+
+% Babel Package for Multilingual Support
+\usepackage[english]{babel} % Import babel with English language for multilingual support and hyphenation
+
+% Graphics
+\usepackage{tikz} % Import tikz for creating complex diagrams and graphical elements
+\usepackage{graphicx} % Import graphicx to provide the \includegraphics command for adding images to the document
+
+\usepackage{stackengine} % Import stackengine for vertically stacking objects such as symbols or images
+
+% Helvet Package for Arial Font
+\usepackage{helvet} % Import helvet package to use Arial font
+
+% AMSMath Package for Enhanced Math Features
+\usepackage{amsmath} 
+
+% Float Package for Improved Float Handling
+\usepackage{float} 
+
+% Tables
+\usepackage{threeparttable}  % Import threeparttable for tables with a structured note section below the table
+\usepackage{threeparttablex} % Import threeparttablex for extending threeparttable functionalities to long tables created with longtable package
+\usepackage{multicol}        % Import multicol for using multiple columns in the document layout
+\usepackage{multirow}        % Import multirow for creating table cells spanning multiple rows
+\usepackage{longtable}       % Multi-page tables
+\usepackage{booktabs}        % Import booktabs for creating professional-quality tables with enhanced layout and design
+
+% SIUnitx Package for SI Units
+\usepackage{siunitx} % Import siunitx for proper typesetting of SI units, aligning numbers in tables, and other numeric data features
+
+
+
+% Font Encoding Packages
+\usepackage[T1]{fontenc} % Import fontenc with T1 encoding for better font rendering and support for European characters
+\usepackage[utf8]{inputenc} % Import inputenc with UTF-8 encoding for supporting a wide range of input characters
+
+% CSQuotes for Context-Sensitive Quotation Marks
+\usepackage{csquotes} 
+% Hyperref allows to create links. Load with option to make them black
+\usepackage[colorlinks=true, allcolors=black]{hyperref}
+
+% BibLaTeX for Bibliography Management
+\usepackage[backend=biber, style=apa]{biblatex} % Import biblatex with Biber backend and APA style for advanced bibliography management
+\addbibresource{references.bib}
+\DefineBibliographyStrings{english}{%
+  bibliography = {References},
+}
+
+% \usepackage{showframe} %is any content spilling out?
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%START
+\begin{document}
+
+% Sets numbering division level for TOC
+\setcounter{secnumdepth}{4}  % Numbering depth to subsubsection
+\setcounter{tocdepth}{4}  % Include depth to subsubsection in ToC
+
+% Front matter (Title page, thesis summary, acknowledgment etc.)
+\include{0_Front_matter/front_matter_main}
+\pagestyle{fancy}
+
+%\pagestyle{plain}
+\mainmatter
+\FloatBarrier
+
+% Introduction
+\include{1_Introduction/1_Introduction}
+\newpage
+%\thispagestyle{plain}
+\mbox{}
+\newpage
+
+% 2nd Chapter
+%\include{2_Chapter/main_chapter_2}
+%\newpage
+%\thispagestyle{plain}
+%\mbox{}
+%\newpage
+
+% 3rd Chapter
+%\include{3_Chapter/main_chapter_3}
+%\newpage
+%\thispagestyle{plain}
+%\mbox{}
+%\newpage
+
+% 4th Chapter
+%\include{4_Chapter/main_chapter_4}
+%\newpage
+%\thispagestyle{plain}
+%\mbox{}
+%\newpage
+
+% Conclusion
+%\include{5_General Discussion/ConclusionMain}
+%\newpage
+%\mbox{}
+%\newpage
+%\backmatter
+
+
+\printbibliography[heading=bibintoc]
+\end{document}
